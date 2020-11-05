@@ -5,15 +5,7 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-dnf install libX11-devel-1.6.12-1.fc33.x86_64
-dnf install mesa-libGL-devel
-dnf install systemd-devel
-dnf install openal-soft-devel
-dnf install libvorbis-devel
-dnf install flac-devel
-dnf install libXrandr-devel
-dnf install SFML
-dnf install SFML-devel
+dnf install -y libX11-devel-1.6.12-1.fc33.x86_64 mesa-libGL-devel systemd-devel openal-soft-devel libvorbis-devel flac-devel libXrandr-devel SFML SFML-devel
 
 SFML_SOURCE_URL="http://www.sfml-dev.org/files/SFML-2.5.1-sources.zip"
 CSFML_SOURCE_URL="http://www.sfml-dev.org/files/CSFML-2.5-sources.zip"
@@ -58,3 +50,44 @@ ldconfig
 
 # Clean
 rm -rf "$CSFML_ZIP" "$CSFML_PATH" "$SFML_ZIP" "$SFML_PATH"
+
+echo "# GDM configuration storage
+#
+# See /usr/share/gdm/gdm.schemas for a list of available options.
+
+
+
+[daemon]
+# Uncomment the line below to force the login screen to use Xorg
+WaylandEnable=false
+
+
+
+# Enabling automatic login
+#  AutomaticLoginEnable = true
+#  AutomaticLogin = user1
+
+
+
+# Enabling timed login
+#  TimedLoginEnable = true
+#  TimedLogin = user1
+#  TimedLoginDelay = 10
+DefaultSession=gnome-xorg.desktop
+[security]
+
+
+
+[xdmcp]
+
+
+
+[chooser]
+
+
+
+[debug]
+# Uncomment the line below to turn on debugging
+# More verbose logs
+# Additionally lets the X server dump core if it crashes
+#Enable=true" > /etc/gdm/custom.conf
