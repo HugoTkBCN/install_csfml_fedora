@@ -7,6 +7,8 @@ fi
 
 dnf install -y libX11-devel-1.6.12-1.fc33.x86_64 mesa-libGL-devel systemd-devel openal-soft-devel libvorbis-devel flac-devel libXrandr-devel SFML SFML-devel
 
+yum -y install qt-devel cmake
+
 SFML_SOURCE_URL="http://www.sfml-dev.org/files/SFML-2.5.1-sources.zip"
 CSFML_SOURCE_URL="http://www.sfml-dev.org/files/CSFML-2.5-sources.zip"
 
