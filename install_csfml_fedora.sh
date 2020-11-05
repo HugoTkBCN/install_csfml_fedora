@@ -5,7 +5,7 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-dnf install -y libX11-devel-1.6.12-1.fc33.x86_64 mesa-libGL-devel systemd-devel openal-soft-devel libvorbis-devel flac-devel libXrandr-devel SFML SFML-devel
+dnf install -y cmake make libX11-devel-1.6.12-1.fc33.x86_64 mesa-libGL-devel systemd-devel openal-soft-devel libvorbis-devel flac-devel libXrandr-devel SFML SFML-devel
 
 yum -y install qt-devel cmake
 
